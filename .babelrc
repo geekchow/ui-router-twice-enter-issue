@@ -1,0 +1,25 @@
+{
+  "presets": [
+    ["latest", { "modules": false }],
+    "stage-0",
+    "stage-1"
+  ],
+  "plugins": [
+    "transform-decorators-legacy",
+    "transform-strict-mode",
+    "transform-undefined-to-void",
+    "transform-node-env-inline",
+    "transform-class-properties"
+  ],
+  "env": {
+    "coverage": {
+      "plugins": [
+        ["istanbul", {
+          "exclude": [
+            "**/*.spec.js"
+          ]
+        }]
+      ]
+    }
+  }
+}

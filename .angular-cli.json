@@ -1,11 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "ui-router-issue"
+    "name": "ui-router-issue",
+    "ejected": true
   },
   "apps": [
     {
-      "root": "src",
+      "root": "src/ng2",
       "outDir": "dist",
       "assets": [
         "assets",
@@ -36,11 +37,11 @@
   },
   "lint": [
     {
-      "project": "src/tsconfig.app.json",
+      "project": "src/ng2/tsconfig.app.json",
       "exclude": "**/node_modules/**"
     },
     {
-      "project": "src/tsconfig.spec.json",
+      "project": "src/ng2/tsconfig.spec.json",
       "exclude": "**/node_modules/**"
     },
     {
@@ -54,7 +55,9 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
-    "component": {}
+    "styleExt": "sass",
+    "component": {
+      "changeDetection": "OnPush"
+    }
   }
 }
