@@ -44,9 +44,27 @@ const config = (
     name: 'test',
     url: '/test',
     component: 'test',
-    resolve: {
-      delay: () => new Promise((resolve) => setTimeout(resolve, 500))
-    }
+    // resolve: {
+    //   delay: () => new Promise((resolve) => setTimeout(resolve, 500))
+    // }
+  });
+
+  $stateProvider.state({
+    name: 'test.test1',
+    url: '/test1',
+    component: 'test1',
+    // resolve: {
+    //   delay: () => new Promise((resolve) => setTimeout(resolve, 200))
+    // }
+  });
+
+  $stateProvider.state({
+    name: 'test.test2',
+    url: '/test2',
+    component: 'test2',
+    // resolve: {
+    //   delay: () => new Promise((resolve) => setTimeout(resolve, 200))
+    // }
   });
 
   $stateProvider.state({
@@ -85,7 +103,7 @@ const run = (
   $transitions,
   $trace,
 ) => {
-  $transitions.onStart(
+  $transitions.onBefore(
     { entering: shouldLazyload },
     lazyloadFiles
   );
@@ -107,6 +125,9 @@ function lazyloadFiles(transition) {
     .filter(shouldLazyload)
     .map((state) => Lazyload.load(state.name));
 
+    const wait = new Promise((resolve) => setTimeout(resolve, 600));
+    promises.push(wait);
+  
   return Promise.all(promises);
 }
 

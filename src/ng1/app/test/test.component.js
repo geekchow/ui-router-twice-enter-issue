@@ -10,8 +10,12 @@ const testComponent = {
           <li><a ui-sref="home">Go to home page</a></li>
           <li><a ui-sref="protected">Go to protected page</a></li>
           <li><a ui-sref="other-protected">Go to other Protected (ng2)</a></li>
+          <li><a ui-sref="test.test1">Go to test1 page</a></li>
+          <li><a ui-sref="test.test2">Go to test2 page</a></li>
         </ul>
       </nav>
+
+      <div ui-view id="test-container"></div>
 
     </div>
   `
