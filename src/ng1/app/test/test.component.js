@@ -3,11 +3,16 @@ import angular from 'angular';
 const testComponent = {
   template: `
     <div class="other-protected">
-      <h1>other protected page</h1>
+      <h1>test page</h1>
 
-      <a ui-sref="home">Go to home page</a>
-      <a ui-sref="protected">Go to protected</a>
-    </div>
+      <nav>
+        <ul>
+          <li><a ui-sref="home">Go to home page</a></li>
+          <li><a ui-sref="protected">Go to protected page</a></li>
+          <li><a ui-sref="other-protected">Go to other Protected (ng2)</a></li>
+        </ul>
+
+    </nav>
   `
 }
 

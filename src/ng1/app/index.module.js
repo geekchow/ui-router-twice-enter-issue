@@ -16,6 +16,12 @@ const app = angular.module('myapp', [
   'myapp.service'
 ]);
 
+/*************************
+ *
+ * CONFIG SECTION
+ *
+ *************************/
+
 const config = (
   $locationProvider,
   $urlRouterProvider,
@@ -35,15 +41,18 @@ const config = (
   });
 
   $stateProvider.state({
-    name: 'protected',
-    url: '/protected',
-    component: 'protected'
+    name: 'test',
+    url: '/test',
+    component: 'test',
+    resolve: {
+      delay: () => new Promise((resolve) => setTimeout(resolve, 500))
+    }
   });
 
   $stateProvider.state({
-    name: 'test',
-    url: '/test',
-    component: 'test'
+    name: 'protected',
+    url: '/protected',
+    component: 'protected'
   });
 
   $compileProvider.debugInfoEnabled(true);
@@ -64,6 +73,13 @@ config.$inject = [
 ];
 
 app.config(config);
+
+
+/*************************
+ *
+ * RUN SECTION
+ *
+ *************************/
 
 const run = (
   $transitions,
