@@ -1,11 +1,13 @@
+const path = require('path');
+
 export const config = {
   'home': (resolve) =>
-    import(/* webpackChunkName: 'home' */ '/Users/jonathan/Projects/ui-router-issue/src/ng1/app/home/home.component.js')
+    import(/* webpackChunkName: 'home' */ `${__dirname}/home/home.component.js`)
       .then(resolve),
   'protected': (resolve) =>
-    import(/* webpackChunkName: 'protected' */ '/Users/jonathan/Projects/ui-router-issue/src/ng1/app/protected/protected.component.js')
+    import(/* webpackChunkName: 'protected' */ `${__dirname}/protected/protected.component.js`)
       .then(resolve),
   'test': (resolve) =>
-    import(/* webpackChunkName: 'test' */ '/Users/jonathan/Projects/ui-router-issue/src/ng1/app/test/test.component.js')
+    import(/* webpackChunkName: 'test' */ `${__dirname}/test/test.component.js`)
       .then(resolve),
 }
