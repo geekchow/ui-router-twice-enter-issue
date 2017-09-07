@@ -11,8 +11,9 @@ const testComponent = {
           <li><a ui-sref="protected">Go to protected page</a></li>
           <li><a ui-sref="other-protected">Go to other Protected (ng2)</a></li>
         </ul>
+      </nav>
 
-    </nav>
+    </div>
   `
 }
 
